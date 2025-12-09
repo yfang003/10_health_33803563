@@ -36,22 +36,28 @@ app.use(session({
 // Define our application-specific data
 app.locals.fitnessData = {appName: "FitTrack"}
 
-// Define the database connection pool
-// const db = mysql.createPool({
-//   host: process.env.DB_HOST || 'localhost',
-//   user: process.env.DB_USER || 'berties_books_app',
-//   password: process.env.DB_PASSWORD || 'qwertyuiop',
-//   database: process.env.DB_NAME || 'berties_books',
-//   waitForConnections: true,
-//   connectionLimit: parseInt(process.env.DB_CONN_LIMIT) || 10,
-//   queueLimit: 0,
-// })
-//     global.db = db;
+
+const db = mysql.createPool({
+  host: process.env.HEALTH_HOST || 'localhost',
+  user: process.env.HEALTH_USER || 'health_app',
+  password: process.env.HEALTH_PASSWORD || 'qwertyuiop',
+  database: process.env.HEALTH_DATABASE || 'health',
+  waitForConnections: true,
+  connectionLimit: parseInt(process.env.DB_CONN_LIMIT || '10', 10),
+  queueLimit: 0,
+});
+    global.db = db;
+
 
 // Load the route handlers
 const mainRoutes = require("./routes/main")
 app.use('/', mainRoutes)
 
+const authRoutes = require('./routes/auth')
+app.use('/auth', authRoutes)
+
+const workoutRoutes = require('./routes/workouts')
+app.use('/workouts', workoutRoutes)
 
 // Start the web app listening
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

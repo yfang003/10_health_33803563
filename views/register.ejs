@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Register for <%=fitnessData.appName%></title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1>Register for <%=fitnessData.appName%></h1>
+    <form method="POST" action="/auth/registered">
+        <p>First name: <input id="firstname" type="text" name="firstname" /></p>
+        <p>Last name: <input id="lastname" type="text" name="lastname" /></p>
+        <p>Email: <input id="email" type="email" name="email" /></p>
+        <p>Username: <input id="username" type="text" name="username" /></p>
+        <p>Password: <input id="password" type="password" name="password" /></p>
+        <input type="submit" value="register" />
+      </form>
+  </body>
+</html>

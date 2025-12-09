@@ -1,43 +1,48 @@
-h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: darkcyan;
-}
-
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: cadetblue;
+  margin-bottom: 20px;
 }
 
-p,li {
-    font-family: Arial, Helvetica, sans-serif;
+.actions {
+  margin-bottom: 20px;
 }
 
-a:link {
-    color: orangered;
-    text-decoration: none;
-    padding:5px;
-  }
-  
-  /* visited link */
-  a:visited {
-    color: tomato;
-    text-decoration: none;
-    padding:5px;
-  }
-  
-  /* mouse over link */
-  a:hover {
-    color: white;
-    text-decoration: none;
-    background-color: orangered;
-    padding:5px;
-  }
-  
-  /* selected link */
-  a:active {
-    color: blue;
-    text-decoration: none;
-    padding:5px;
-  }
+.btn {
+  padding: 8px 14px;
+  background: #4a90e2;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background: #357ac8;
+}
+
+.btn-small {
+  padding: 5px 10px;
+  background: #888;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn-small:hover {
+  background: #666;
+}
+
+.workout-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.workout-table th,
+.workout-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.workout-table th {
+  background: #f5f5f5;
+  text-align: left;
+}
