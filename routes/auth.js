@@ -55,7 +55,8 @@ router.post('/registered',
                 next(err)
                 }
                 else{
-                    result = 'Hello '+ safeFirstname + ' '+ safeLastname +' you are now registered! We will send an email to you at ' + req.body.email
+                    result = 'Hello '+ safeFirstname + ' '+ safeLastname +' you are now registered! We will send an email to you at ' + req.body.email 
+                    + '<a href="/">Home</a>'
                     res.send(result)
                 
                 }
