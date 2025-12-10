@@ -1,0 +1,11 @@
+home=https://www.doc.gold.ac.uk/usr/390/
+home=https://www.doc.gold.ac.uk/usr/390/about
+home=http://www.doc.gold.ac.uk/usr/390/auth/register
+home=https://www.doc.gold.ac.uk/usr/390/auth/login
+home=https://www.doc.gold.ac.uk/usr/390/auth/logout
+home=https://www.doc.gold.ac.uk/usr/390/workouts
+home=https://www.doc.gold.ac.uk/usr/390/workouts/addworkout
+home=https://www.doc.gold.ac.uk/usr/390/workouts/search
+home=https://www.doc.gold.ac.uk/usr/390/workouts/1
+home=https://www.doc.gold.ac.uk/usr/390/workouts/2
+home=https://www.doc.gold.ac.uk/usr/390/workouts/3
