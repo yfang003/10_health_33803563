@@ -24,7 +24,14 @@ CREATE TABLE exercises (
   muscle_group VARCHAR(50)
 );
 
--- 训练条目（某次训练中做了哪一个动作，做了几组几次等）
+CREATE TABLE audit_log (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    success BOOLEAN NOT NULL,
+    log_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 CREATE TABLE workout_entries (
   id INT AUTO_INCREMENT PRIMARY KEY,
   workout_id INT NOT NULL,

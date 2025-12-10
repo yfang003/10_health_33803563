@@ -5,6 +5,7 @@ const path = require('path')
 var mysql = require('mysql2')
 var session = require ('express-session')
 const expressSanitizer = require('express-sanitizer');
+const request = require('request')
 
 // Create the express application object
 const app = express()
@@ -58,6 +59,9 @@ app.use('/auth', authRoutes)
 
 const workoutRoutes = require('./routes/workouts')
 app.use('/workouts', workoutRoutes)
+
+const weatherRoutes = require('./routes/weather')
+app.use('/weather', weatherRoutes)
 
 // Start the web app listening
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

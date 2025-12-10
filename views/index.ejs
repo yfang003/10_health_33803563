@@ -14,5 +14,22 @@
     <!-- <p><a href="books/list">List books</a></p> -->
     <p><a href="auth/logout">Logout</a></p>
     <p><a href="workouts">workouts</a></p>
+
+    <hr>
+    <h2>Today's weather</h2>
+
+    <!-- 用 iframe 把 /weather/now 的 HTML “嵌”进来 -->
+    <iframe 
+      src="/weather/now?city=london" 
+      style="border:none; width:100%; max-width:500px; height:220px;">
+    </iframe>
+
+    <!-- 提示用户根据天气选择室外/室内运动（可以是固定提示） -->
+    <p style="margin-top:10px;color: rgb(87, 116, 6);">
+    <span style="font-weight:bold;">Please choose to exercise outdoors or indoors 
+      according to today's weather conditions. 
+      <br>Pay attention to safety and comfort.</span>
+    </p>
+
   </body>
 </html>
