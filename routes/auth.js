@@ -18,15 +18,11 @@ router.get('/register', function (req, res, next) {
 
 router.post('/registered', 
     [
+        check('firstname').notEmpty(),
+        check('lastname').notEmpty().notEmpty(),
         check('email').isEmail(), 
         check('username').isLength({ min: 5, max: 20}),
-        check('password').isLength({min: 8}),
-        check('firstname').notEmpty(),
-        check('lastname').notEmpty(),
-        check('email').notEmpty(),
-        //check('username').matches(/^\S+$/),
-        // check('firstname').trim().escape(),
-        // check('lastname').trim().escape()
+        check('password').isLength({min: 5})
 
 
     ],
@@ -93,6 +89,11 @@ function(req, res, next){
     db.query(sql,[username], function(err,rows){
         if(err){
             return next(err)
+        }
+
+         if (rows.length === 0) {
+            db.query(auditSql, [username, false]);
+            return res.send('User not found, please register first.');
         }
 
         const user = rows[0]
