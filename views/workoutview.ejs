@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Workout Details</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1>Workout Details</h1>
+
+    <h2>Basic Info</h2>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <th>Date</th>
+            <td><%= workout.workout_date.toISOString().split("T")[0] %></td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td><%= workout.title %></td>
+        </tr>
+    </table>
+
+    <h2>Exercises in this workout</h2>
+
+    <% if (entries.length === 0) { %>
+        <p>No exercises recorded for this workout.</p>
+    <% } else { %>
+        <table border="1" cellspacing="0" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Muscle Group</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Weight (kg)</th>
+                    <th>Duration (min)</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% entries.forEach(function(entry) { %>
+                    <tr>
+                        <td><%= entry.exercise_name %></td>
+                        <td><%= entry.muscle_group || '-' %></td>
+                        <td><%= entry.sets %></td>
+                        <td><%= entry.reps %></td>
+                        <td><%= entry.weight_kg %></td>
+                        <td><%= entry.duration_min %></td>
+                        <td><%= entry.notes || '-' %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } %>
+
+    <p>
+        <a href="/workouts">Back to my workouts</a>
+    </p>
+</body>
+</html>

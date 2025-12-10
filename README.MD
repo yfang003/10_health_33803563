@@ -11,7 +11,6 @@ This database uses relational constraints to ensure data consistency:
 Foreign keys link one table to another.
 Examples in this project:
 
-- workouts.user_id → users.id
 - workout_entries.workout_id → workouts.id
 
 2. ON DELETE rules

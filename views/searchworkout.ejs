@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Search Workouts</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1>Search Workouts</h1>
+
+    <form method="GET" action="/workouts/search-result">
+        <div>
+            <label for="keyword">Keyword in title:</label>
+            <input type="text" id="keyword" name="keyword" maxlength="100">
+        </div>
+
+        <div>
+            <label for="from">From date:</label>
+            <input type="date" id="from" name="from">
+        </div>
+
+        <div>
+            <label for="to">To date:</label>
+            <input type="date" id="to" name="to">
+        </div>
+
+        <div>
+            <button type="submit">Search</button>
+        </div>
+    </form>
+
+    <p>
+        <a href="/workouts">Back to my workouts</a>
+    </p>
+</body>
+</html>
+

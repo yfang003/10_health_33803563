@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Add Workout</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1>Add a New Workout</h1>
+
+    <form method="POST" action="/workouts/workoutadded">
+        <!-- Workout -->
+        <fieldset>
+            <legend>Workout Info</legend>
+
+            <div>
+                <label for="title">Workout Title:</label>
+                <input type="text" id="title" name="title" maxlength="100" required>
+            </div>
+
+            <div>
+                <label for="workout_date">Workout Date:</label>
+                <input type="date" id="workout_date" name="workout_date" required>
+            </div>
+        </fieldset>
+
+        <!-- Exercise -->
+        <fieldset>
+            <legend>Exercise</legend>
+
+            <div>
+                <label for="exercise_name">Exercise Name:</label>
+                <input type="text" id="exercise_name" name="exercise_name" maxlength="100" required>
+            </div>
+
+            <div>
+                <label for="muscle_group">Muscle Group (optional):</label>
+                <input type="text" id="muscle_group" name="muscle_group" maxlength="50">
+            </div>
+        </fieldset>
+
+        <!-- 这一条 workout 中这个动作的详细记录 -->
+        <fieldset>
+            <legend>Details for this Exercise</legend>
+
+            <div>
+                <label for="sets">Sets:</label>
+                <input type="number" id="sets" name="sets" min="1" value="3">
+            </div>
+
+            <div>
+                <label for="reps">Reps per set:</label>
+                <input type="number" id="reps" name="reps" min="0" value="10">
+            </div>
+
+            <div>
+                <label for="weight_kg">Weight (kg):</label>
+                <input type="number" step="0.5" id="weight_kg" name="weight_kg" min="0" value="0">
+            </div>
+
+            <div>
+                <label for="duration_min">Duration (min):</label>
+                <input type="number" id="duration_min" name="duration_min" min="0" value="0">
+            </div>
+
+            <div>
+                <label for="notes">Notes:</label><br>
+                <textarea id="notes" name="notes" rows="4" cols="40"></textarea>
+            </div>
+        </fieldset>
+
+        <div>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+
+    <p>
+        <a href="/workouts">Back to my workouts</a>
+    </p>
+</body>
+</html>

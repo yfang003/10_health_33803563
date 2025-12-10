@@ -109,7 +109,7 @@ function(req, res, next){
         if (result == true) {
             // Save user session here, when login is successful
             req.session.userId = req.body.username;
-            res.send('Successful! Wlcome ' +  user.firstname)
+            res.send('Successful! Wlcome ' +  user.firstname + '<a href="/">Home</a>')
         }
         else {
             res.send('Wrong password, please check')

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Workout List</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1>Workout List</h1>
+
+    <% if (keyword || from || to) { %>
+        <p>Search conditions:</p>
+        <ul>
+            <% if (keyword) { %>
+                <li>Keyword in title: "<strong><%= keyword %></strong>"</li>
+            <% } %>
+            <% if (from) { %>
+                <li>From date: <strong><%= from %></strong></li>
+            <% } %>
+            <% if (to) { %>
+                <li>To date: <strong><%= to %></strong></li>
+            <% } %>
+        </ul>
+    <% } %>
+
+    <% if (workouts && workouts.length > 0) { %>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% workouts.forEach(function(workout) { %>
+                    <tr>
+                        <td><%= workout.id %></td>
+                        <td>
+                            <% if (workout.workout_date && workout.workout_date.toISOString) { %>
+                                <%= workout.workout_date.toISOString().slice(0, 10) %>
+                            <% } else { %>
+                                <%= workout.workout_date %>
+                            <% } %>
+                        </td>
+                        <td><%= workout.title %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No workouts found for this search.</p>
+    <% } %>
+
+    <p>
+        <a href="/workouts/search">Search again</a> |
+        <a href="/workouts">Back to my workouts</a>
+    </p>
+</body>
+</html>

@@ -12,9 +12,9 @@ CREATE TABLE users (
 
 CREATE TABLE workout (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    workout_date DATE NOT NULL,
-    title VARCHAR(100) NOT NULL
+    title VARCHAR(100) NOT NULL,
+    workout_date DATE NOT NULL
+
     
 );
 
